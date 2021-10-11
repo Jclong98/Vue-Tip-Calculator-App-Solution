@@ -256,6 +256,18 @@ input.selected {
   color: rgba(0, 0, 0, 0.2);
 }
 
+.attribution {
+  font-size: 0.7rem;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.attribution a {
+  color: #3e52a3;
+}
+
 /* media query for larger than 375px */
 @media (min-width: 800px) {
   body {
