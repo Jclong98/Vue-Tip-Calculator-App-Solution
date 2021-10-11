@@ -27,20 +27,20 @@
     <script src="assets/scripts/main.js" defer></script>
   </head>
   <body>
-    <div id="logo">
+    <header id="logo">
       <img src="assets/images/logo.svg" alt="Splitter Logo" />
-    </div>
+    </header>
 
     <main id="app">
       <!-- BILL INPUT SECTION -->
       <div id="inputs">
-        <section class="mb">
+        <section>
+          <h3>
+            <label for="bill">
+              <span>Bill</span>
+            </label>
+          </h3>
           <div class="input-container">
-            <h3>
-              <label for="bill">
-                <span>Bill</span>
-              </label>
-            </h3>
             <div>
               <img src="assets/images/icon-dollar.svg" alt="dollar icon" />
               <input
@@ -88,15 +88,15 @@
 
         <!-- NUMBER OF PEOPLE INPUT SECTION -->
         <section>
+          <h3>
+            <label for="number-of-people">
+              <span>Number of People</span>
+              <span v-show="numberOfPeople == 0" class="error-message">
+                Can't be zero
+              </span>
+            </label>
+          </h3>
           <div class="input-container" :class="{error: numberOfPeople == 0}">
-            <h3>
-              <label for="number-of-people">
-                <span>Number of People</span>
-                <span v-show="numberOfPeople == 0" class="error-message">
-                  Can't be zero
-                </span>
-              </label>
-            </h3>
             <div>
               <img src="assets/images/icon-person.svg" alt="dollar icon" />
               <input
