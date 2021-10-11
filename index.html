@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/styles/style.css" />
+
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="assets/scripts/main.js" defer></script>
+  </head>
+  <body>
+    <div id="logo">
+      <img src="assets/images/logo.svg" alt="Splitter Logo" />
+    </div>
+
+    <main id="app">
+      <!-- BILL INPUT SECTION -->
+      <div id="inputs">
+        <section class="mb">
+          <div class="input-container">
+            <label for="bill">
+              <span>Bill</span>
+            </label>
+            <div>
+              <img src="assets/images/icon-dollar.svg" alt="dollar icon" />
+              <input
+                v-model="bill"
+                class="rounded .hover-brighten"
+                type="number"
+                id="bill"
+                name="bill"
+                placeholder="0"
+                min="0"
+                step="0.01"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- SELECT TIP INPUT SECTION -->
+        <section class="mb">
+          <label for="custom-amount">Select Tip %</label>
+          <div id="button-group">
+            <button
+              v-for="(percent, index) in tipPercentages"
+              :key="index"
+              class="cursor-pointer hover-brighten"
+              :class="{selected: !hasCustomTip && tip == percent}"
+              @click="setTip(percent)"
+            >
+              {{percent}}%
+            </button>
+
+            <input
+              v-model="customTip"
+              @input="hasCustomTip = true"
+              @click="hasCustomTip = true"
+              :class="{selected: hasCustomTip}"
+              type="number"
+              id="custom-amount"
+              name="custom-amount"
+              placeholder="Custom"
+              min="0"
+              step="1"
+            />
+          </div>
+        </section>
+
+        <!-- NUMBER OF PEOPLE INPUT SECTION -->
+        <section>
+          <div class="input-container" :class="{error: numberOfPeople == 0}">
+            <label for="number-of-people">
+              <span>Number of People</span>
+              <span v-show="numberOfPeople == 0" class="error-message">
+                Can't be zero
+              </span>
+            </label>
+            <div>
+              <img src="assets/images/icon-person.svg" alt="dollar icon" />
+              <input
+                v-model="numberOfPeople"
+                class="rounded hover-darken"
+                type="number"
+                id="number-of-people"
+                name="number-of-people"
+                placeholder="0"
+                min="0"
+                step="1"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- RESULTS SECTION -->
+      <div id="results">
+        <div>
+          <div class="result">
+            <p>
+              Tip Amount <br />
+              <small>/ person</small>
+            </p>
+            <h2>${{tipPerPerson.toFixed(2)}}</h2>
+          </div>
+          <div class="result">
+            <p>
+              Total <br />
+              <small>/ person</small>
+            </p>
+            <h2>${{totalPerPerson.toFixed(2)}}</h2>
+          </div>
+        </div>
+
+        <button class="cursor-pointer hover-brighten" @click="reset()">RESET</button>
+      </div>
+    </main>
+  </body>
+</html>
