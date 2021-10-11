@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Jclong98/Vue-Tip-Calculator-App-Solution)
-- Live Site URL: [Add live site URL here](https://jclong98.github.io/Vue-Tip-Calculator-App-Solution/)
+- Solution URL: [https://github.com/Jclong98/Vue-Tip-Calculator-App-Solution](https://github.com/Jclong98/Vue-Tip-Calculator-App-Solution)
+- Live Site URL: [https://jclong98.github.io/Vue-Tip-Calculator-App-Solution/](https://jclong98.github.io/Vue-Tip-Calculator-App-Solution/)
 
 ## My process
 
