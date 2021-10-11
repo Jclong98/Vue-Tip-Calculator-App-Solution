@@ -259,11 +259,9 @@ input.selected {
 .attribution {
   font-size: 0.7rem;
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  background: white;
 }
+
 .attribution a {
   color: #3e52a3;
 }
@@ -303,5 +301,10 @@ input.selected {
 
   #results h2 {
     font-size: 3rem;
+  }
+
+  .attribution {
+    margin-top: 1rem;
+    background: transparent;
   }
 }
