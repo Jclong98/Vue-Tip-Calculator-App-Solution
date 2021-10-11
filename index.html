@@ -36,9 +36,11 @@
       <div id="inputs">
         <section class="mb">
           <div class="input-container">
-            <label for="bill">
-              <span>Bill</span>
-            </label>
+            <h3>
+              <label for="bill">
+                <span>Bill</span>
+              </label>
+            </h3>
             <div>
               <img src="assets/images/icon-dollar.svg" alt="dollar icon" />
               <input
@@ -57,7 +59,7 @@
 
         <!-- SELECT TIP INPUT SECTION -->
         <section class="mb">
-          <label>Select Tip %</label>
+          <h3>Select Tip %</h3>
           <div id="button-group">
             <button
               v-for="(percent, index) in tipPercentages"
@@ -87,12 +89,14 @@
         <!-- NUMBER OF PEOPLE INPUT SECTION -->
         <section>
           <div class="input-container" :class="{error: numberOfPeople == 0}">
-            <label for="number-of-people">
-              <span>Number of People</span>
-              <span v-show="numberOfPeople == 0" class="error-message">
-                Can't be zero
-              </span>
-            </label>
+            <h3>
+              <label for="number-of-people">
+                <span>Number of People</span>
+                <span v-show="numberOfPeople == 0" class="error-message">
+                  Can't be zero
+                </span>
+              </label>
+            </h3>
             <div>
               <img src="assets/images/icon-person.svg" alt="dollar icon" />
               <input
@@ -129,7 +133,11 @@
           </div>
         </div>
 
-        <button :disabled="!canReset" class="cursor-pointer hover-brighten" @click="reset()">
+        <button
+          :disabled="!canReset"
+          class="cursor-pointer hover-brighten"
+          @click="reset()"
+        >
           RESET
         </button>
       </div>
