@@ -17,9 +17,9 @@ const Splitter = {
     },
 
     reset() {
-      this.bill = 0
-      this.numberOfPeople = 1
-      this.tip = 0
+      this.bill = null
+      this.numberOfPeople = null
+      this.tip = null
       this.hasCustomTip = false
       this.customTip = null
     },
