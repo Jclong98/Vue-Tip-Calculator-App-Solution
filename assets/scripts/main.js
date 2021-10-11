@@ -1,9 +1,9 @@
 const Splitter = {
   data() {
     return {
-      bill: 0,
-      numberOfPeople: 1,
-      tip: 0,
+      bill: null,
+      numberOfPeople: null,
+      tip: null,
       hasCustomTip: false,
       customTip: null,
       tipPercentages: [5, 10, 15, 25, 50],
@@ -31,11 +31,15 @@ const Splitter = {
 
       const tipPerPerson = (tipPercentage * this.bill) / this.numberOfPeople
 
-      return tipPerPerson
+      return tipPerPerson || 0
     },
 
     totalPerPerson() {
-      return this.bill / this.numberOfPeople + this.tipPerPerson
+      return this.bill / this.numberOfPeople + this.tipPerPerson || 0
+    },
+
+    canReset() {
+      return this.bill || this.numberOfPeople || this.tip
     },
   },
 }

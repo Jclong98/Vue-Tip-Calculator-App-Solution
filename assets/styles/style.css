@@ -241,6 +241,11 @@ input.selected {
   color: var(--very-dark-cyan);
 }
 
+#results button:disabled {
+  filter: brightness(0.5);
+  cursor: not-allowed;
+}
+
 /* media query for larger than 375px */
 @media (min-width: 800px) {
   body {
@@ -257,10 +262,12 @@ input.selected {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     padding: 2rem;
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
     flex-grow: 0;
     border-radius: 1.5rem;
+    /* soft box shadow */
+    box-shadow: 0 10px 100px 20px hsla(160, 76%, 10%, 0.1);
   }
 
   #button-group {
